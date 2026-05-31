@@ -1,17 +1,17 @@
-# 🏥 Can AI Save Lives? — Intelligent Clinical Early Warning System
+# Can AI Save Lives? — Intelligent Clinical Early Warning System
 
 > **Deep Learning Assignment | Department of Artificial Intelligence**  
 > Building a multi-generation deep learning pipeline to predict patient deterioration risk from vital signs and clinical notes.
 
 ---
 
-## 📌 Problem Statement
+##  Problem Statement
 
 Every year, thousands of patients in hospitals deteriorate silently — their vitals shift gradually, clinical notes grow more urgent, yet warning signs go unnoticed until it is too late. This project builds an **AI-powered Early Warning System** that monitors patients continuously and flags those at risk of **sepsis, cardiac arrest, or ICU transfer** before a crisis occurs.
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 clinical-early-warning-system/
@@ -23,7 +23,7 @@ clinical-early-warning-system/
 
 ---
 
-## 🧬 Dataset
+##  Dataset
 
 - **Primary:** [PhysioNet Sepsis Prediction Challenge](https://physionet.org/content/challenge-2019/)
 - **Alternative:** [Patient Survival Prediction — Kaggle](https://www.kaggle.com/datasets/mitishaagarwal/patient)
@@ -33,9 +33,9 @@ clinical-early-warning-system/
 
 ---
 
-## 🏗️ Model Architecture — Three Generations
+## Model Architecture — Three Generations
 
-### ⚡ Generation 1 — DNN Baseline
+###  Generation 1 — DNN Baseline
 | Feature | Detail |
 |---|---|
 | Model | Keras Sequential (3 hidden layers) |
@@ -43,14 +43,14 @@ clinical-early-warning-system/
 | Optimizers | Adam vs SGD (compared side-by-side) |
 | Input | Tabular vitals (HR, BP, Temp, SpO2, Lactate, etc.) |
 
-### ⏱️ Generation 2 — Temporal Models (RNN)
+###  Generation 2 — Temporal Models (RNN)
 | Model | Notes |
 |---|---|
 | LSTM | 12-hour hourly vital windows, unidirectional |
 | Bidirectional LSTM | Higher accuracy, offline/retrospective only |
 | GRU | Faster inference, preferred for real-time ICU |
 
-### 🤖 Generation 3 — ClinicalBERT (Transformer)
+###  Generation 3 — ClinicalBERT (Transformer)
 | Feature | Detail |
 |---|---|
 | Base Model | `emilyalsentzer/Bio_ClinicalBERT` (HuggingFace) |
@@ -71,11 +71,11 @@ clinical-early-warning-system/
 | ClinicalBERT (Frozen) | ~0.84 | ~0.82 | ~0.81 | ~0.82 |
 | ClinicalBERT (Full FT) | ~0.87 | ~0.85 | ~0.84 | ~0.86 |
 
-> ⚠️ **Note:** Recall is the primary clinical metric. A false negative (missed sepsis) is far more dangerous than a false positive.
+ **Note:** Recall is the primary clinical metric. A false negative (missed sepsis) is far more dangerous than a false positive.
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### Option 1 — Google Colab (Recommended for GPU)
 1. Upload `notebook.ipynb` to [Google Colab](https://colab.research.google.com/)
@@ -98,7 +98,7 @@ jupyter notebook notebook.ipynb
 
 ---
 
-## 🔑 Key Findings
+##  Key Findings
 
 - **Adam** converges 2x faster than SGD on this dataset; SGD smoother on larger data
 - **GRU** trains 18% faster than LSTM with comparable Recall — preferred for real-time ICU
@@ -108,7 +108,7 @@ jupyter notebook notebook.ipynb
 
 ---
 
-## 🏛️ Deployment Recommendation
+##  Deployment Recommendation
 
 **Recommended:** Hybrid two-stage system:
 1. **LSTM** (real-time, every hour) — continuous vital sign monitoring
@@ -116,7 +116,7 @@ jupyter notebook notebook.ipynb
 
 ---
 
-## ⚠️ Ethical Considerations
+##  Ethical Considerations
 
 - **Bias:** Subgroup analysis (age, sex, ethnicity) mandatory before deployment
 - **Privacy:** HIPAA/GDPR compliance; no patient data persistence beyond inference window
@@ -124,7 +124,7 @@ jupyter notebook notebook.ipynb
 
 ---
 
-## 📚 References
+##  References
 
 - Seymour et al. (2016). *Assessment of Clinical Criteria for Sepsis (Sepsis-3).* JAMA.
 - Alsentzer et al. (2019). *Publicly Available Clinical BERT Embeddings.* ACL Workshop.
@@ -133,7 +133,7 @@ jupyter notebook notebook.ipynb
 
 ---
 
-## 👤 Author
+##  Author
 
 **[Your Name]**  
 Department of Artificial Intelligence  
